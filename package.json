@@ -1,0 +1,38 @@
+{
+    "name": "nodescrapper-id",
+    "version": "1.0.0",
+    "description": "Indonesia Scrapper Api",
+    "main": "scrape.js",
+    "scripts": {
+        "start": "node src/app.js",
+        "dev": "nodemon src/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/heerrr/nodescraper-id"
+    },
+    "author": "Hery Kurniawan",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/heerrr/nodescraper-id/issues"
+    },
+    "homepage": "https://github.com/heerrr/nodescraper-id#readme",
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.10",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "express-validator": "^6.14.0",
+        "express-winston": "^4.2.0",
+        "http": "^0.0.1-security",
+        "puppeteer": "^13.4.0",
+        "winston": "^3.6.0",
+        "winston-daily-rotate-file": "^4.6.1"
+    },
+    "devDependencies": {
+        "eslint": "^8.9.0",
+        "eslint-plugin-jsdoc": "^37.9.4",
+        "nodemon": "^2.0.15"
+    }
+}
