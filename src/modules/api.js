@@ -1,3 +1,4 @@
+const logger = require('./logger');
 const errorFormatter = require('../formatter/error.formatter');
 const responseFormatter = require('../formatter/response.formatter');
 
@@ -24,10 +25,11 @@ class Api {
             data =e;
         }
         if(data instanceof Error) {
+            logger.error(errorFormatter(data));
             return responseFormatter({},1,errorFormatter(data));
         }
         return responseFormatter(data);
-    };
+    }
 }
 
 const api = new Api();

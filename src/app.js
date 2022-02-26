@@ -3,12 +3,15 @@ require('dotenv').config({path: __dirname +'/../.env'});
 const express = require('express');
 const http = require('http');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
+
 const logger = require('./modules/logger');
 const port = process.env.PORT || 8000;
 const routes = require('./routes/index.route');
 const app = express();
-app.use(express.json());
 
+app.use(express.json());
+app.use(cookieParser());
 app.use(cors({
     credentials: true,
     preflightContinue: true,
