@@ -35,7 +35,7 @@ const terminate = (server, options = { coredump: false, timeout: 500 }) => {
     return (code, reason) => (err, promise) => {
         if (err && err instanceof Error) {
             // Log error information, use a proper logging library here :)
-            waLogger.logger.child({
+            logger.winston.child({
                 error:err.message,
                 trace:err.stack,
             }).error(reason);

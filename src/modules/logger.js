@@ -31,7 +31,7 @@ class Logger {
         });
 
 
-        const logger = createLogger({
+        const winston = createLogger({
             level: 'info',
             format: format.combine(format.timestamp(), format.json()),
             defaultMeta: {  },
@@ -51,39 +51,39 @@ class Logger {
         // `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
         //
         if (process.env.NODE_ENV !== 'production') {
-            logger.add(new transports.Console({
+            winston.add(new transports.Console({
                 format: format.simple(),
             }));
 
         }
-        this.logger = logger;
+        this.winston = winston;
 
 
     }
 
     info(message) {
-        this.logger.info(message);
+        this.winston.info(message);
     }
     error(message) {
-        this.logger.error(message);
+        this.winston.error(message);
     }
     emerg(message) {
-        this.logger.emerg(message);
+        this.winston.emerg(message);
     }
     debug(message) {
-        this.logger.debug(message);
+        this.winston.debug(message);
     }
     warn(message) {
-        this.logger.warn(message);
+        this.winston.warn(message);
     }
     alert(message) {
-        this.logger.alert(message);
+        this.winston.alert(message);
     }
     crit(message) {
-        this.logger.crit(message);
+        this.winston.crit(message);
     }
     notice(message) {
-        this.logger.notice(message);
+        this.winston.notice(message);
     }
 
 }
